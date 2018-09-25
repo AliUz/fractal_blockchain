@@ -11,3 +11,5 @@ Once api is up and running you can query for an upstream tree by going to `http:
 - `docker-compose` will take care of the rest, it will spin up a container for the api which can be access at `http://localhost:5000`
 
 - Make sure you do not have a local service running on port 5000 (you may change it in `docker-compose.yml`)
+
+- This app uses Node `v8.12`, an .nvmrc file is also provided with the version this app was built with.
