@@ -1,0 +1,42 @@
+{
+  "name": "fractal_blockchain",
+  "version": "1.0.0",
+  "description": "Challenge for fractal blockchain",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install && npm run lint && npm run test:unit && npm run transpile",
+    "lint": "eslint lib test",
+    "start": "node dist/index.js",
+    "test:unit": "mocha --recursive --compilers js:babel-core/register --require babel-polyfill test/unit/",
+    "test:integration": "mocha --timeout 10000 --recursive --compilers js:babel-core/register --require babel-polyfill test/integration/",
+    "test": "npm run test:unit && npm run test:integration",
+    "transpile": "babel ./lib --out-dir ./dist --copy-files",
+    "watch": "nodemon --exec babel-node -- lib/index.js"
+  },
+  "author": "Ali Uz",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^9.0.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.6.0",
+    "eslint-config-standard-trailing-commas": "^6.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "should": "^13.2.3",
+    "should-sinon": "0.0.6",
+    "sinon": "^6.3.4",
+    "supertest": "^3.3.0"
+  }
+}
